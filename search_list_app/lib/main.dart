@@ -47,7 +47,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search Demo'),
+        title: const Text('Search + Add + Display Items'),
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
@@ -63,14 +63,22 @@ class _SearchScreenState extends State<SearchScreen> {
             barHintText: "Search items...",
             suggestionsBuilder: (context, controller) {
               searchProvider.search(controller.text);
+
               if (searchProvider.results.isEmpty) {
                 return [const ListTile(title: Text("No results"))];
               }
+
               return searchProvider.results.map((item) {
                 return ListTile(
                   title: Text(item),
                   onTap: () {
-                    controller.closeView(item);
+                    // Navigate to the details screen for this item
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ItemDetailScreen(itemName: item),
+                      ),
+                    );
                   },
                 );
               }).toList();
@@ -78,21 +86,6 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
 
           const SizedBox(height: 10),
-
-          /// 🔹 Selected item display
-          if (controller.text.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Selected item: ${controller.value.text}',
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-
-          const Divider(),
 
           /// 🔹 Display all items from Firestore
           Expanded(
@@ -117,6 +110,8 @@ class _SearchScreenState extends State<SearchScreen> {
                     final name = docs[index]["name"];
                     return ListTile(
                       leading: const Icon(Icons.label),
+
+                      // Navigate to other section
                       title: Text(name),
                     );
                   },
@@ -152,7 +147,6 @@ class _SearchScreenState extends State<SearchScreen> {
               final name = nameController.text.trim();
               if (name.isNotEmpty) {
                 await searchProvider.addItem(name);
-
                 Navigator.pop(ctx);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("Item added successfully!")),
@@ -200,5 +194,16 @@ class SearchProvider extends ChangeNotifier {
   /// Stream of all items for display
   Stream<QuerySnapshot> getItems() {
     return _firestore.collection("items").orderBy("name").snapshots();
+  }
+}
+
+class ItemDetailScreen extends StatelessWidget {
+  final String itemName;
+
+  const ItemDetailScreen({super.key, required this.itemName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(appBar: AppBar(title: Text("Item Details - $itemName")));
   }
 }
