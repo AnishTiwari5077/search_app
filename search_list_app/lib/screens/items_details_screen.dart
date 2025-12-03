@@ -36,7 +36,7 @@ class ItemDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header Section
+            
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(24),
@@ -78,7 +78,7 @@ class ItemDetailScreen extends StatelessWidget {
               ),
             ),
 
-            // Details Section
+            
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -92,7 +92,7 @@ class ItemDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
 
-                  // Details Card
+                  
                   Card(
                     child: Padding(
                       padding: const EdgeInsets.all(16),
@@ -118,7 +118,7 @@ class ItemDetailScreen extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  // Actions Section
+                  
                   Text(
                     'Actions',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -127,7 +127,7 @@ class ItemDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
 
-                  // Action Buttons
+                  
                   Row(
                     children: [
                       Expanded(
@@ -241,7 +241,7 @@ class ItemDetailScreen extends StatelessWidget {
     final searchProvider = parentContext.read<SearchProvider>();
 
     try {
-      // Show loading
+      
       showDialog(
         context: dialogContext,
         barrierDismissible: false,
@@ -250,16 +250,16 @@ class ItemDetailScreen extends StatelessWidget {
 
       await searchProvider.deleteItem(itemId);
 
-      // Close loading
+      
       if (dialogContext.mounted) Navigator.pop(dialogContext);
 
-      // Close delete dialog
+      
       if (dialogContext.mounted) Navigator.pop(dialogContext);
 
-      // Go back to list
+      
       if (parentContext.mounted) Navigator.pop(parentContext);
 
-      // Show success
+    
       if (parentContext.mounted) {
         ScaffoldMessenger.of(parentContext).showSnackBar(
           SnackBar(
@@ -275,10 +275,10 @@ class ItemDetailScreen extends StatelessWidget {
         );
       }
     } catch (e) {
-      // Close loading
+      
       if (dialogContext.mounted) Navigator.pop(dialogContext);
 
-      // Show error
+      
       if (parentContext.mounted) {
         ScaffoldMessenger.of(parentContext).showSnackBar(
           SnackBar(
