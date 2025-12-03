@@ -117,7 +117,7 @@ class _SearchScreenState extends State<SearchScreen> {
               trailing: Icon(
                 Icons.arrow_forward_ios,
                 size: 16,
-                color: Theme.of(context).iconTheme.color?.withOpacity(0.5),
+                color: Theme.of(context).iconTheme.color?.withValues(alpha: .5),
               ),
               onTap: () {
                 controller.closeView(null);
@@ -192,7 +192,9 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                   trailing: Icon(
                     Icons.chevron_right,
-                    color: Theme.of(context).iconTheme.color?.withOpacity(0.5),
+                    color: Theme.of(
+                      context,
+                    ).iconTheme.color?.withValues(alpha: .5),
                   ),
                   onTap: () {
                     Navigator.push(

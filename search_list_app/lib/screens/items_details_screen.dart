@@ -56,7 +56,7 @@ class ItemDetailScreen extends StatelessWidget {
                   Icon(
                     Icons.label,
                     size: 48,
-                    color: Colors.white.withOpacity(0.9),
+                    color: Colors.white.withValues(alpha: .9),
                   ),
                   const SizedBox(height: 16),
                   Hero(
