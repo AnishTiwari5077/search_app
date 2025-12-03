@@ -50,7 +50,7 @@ lib/
 
 💻 Getting Started
 1. Clone the repository
-git clone https://github.com/yourusername/flutter-search-items.git
+git clone https://github.com/anishTiwari5077/flutter-search-items.git
 cd flutter-search-items
 
 2. Install dependencies
@@ -110,6 +110,7 @@ All actions are real-time using Firebase Firestore streams.
 The project uses Provider for state management, ensuring only necessary widgets rebuild.
 
 Error and empty states are handled gracefully with reusable widgets.
+
 
 
 
