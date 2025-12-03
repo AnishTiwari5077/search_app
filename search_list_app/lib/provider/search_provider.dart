@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 class SearchProvider extends ChangeNotifier {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  // Search results with ID and name
+  
   List<Map<String, String>> results = [];
 
-  // Loading state
+ 
   bool isLoading = false;
 
-  // Error state
+ 
   String? errorMessage;
 
-  /// Search Firestore with query (case-insensitive)
+ 
   Future<void> search(String query) async {
     if (query.isEmpty) {
       results = [];
@@ -49,7 +49,7 @@ class SearchProvider extends ChangeNotifier {
     }
   }
 
-  /// Add Item to Firestore
+ 
   Future<void> addItem(String name) async {
     try {
       await _db.collection("items").add({
@@ -63,7 +63,7 @@ class SearchProvider extends ChangeNotifier {
     }
   }
 
-  /// Delete Item from Firestore
+ 
   Future<void> deleteItem(String itemId) async {
     try {
       await _db.collection("items").doc(itemId).delete();
@@ -73,7 +73,7 @@ class SearchProvider extends ChangeNotifier {
     }
   }
 
-  /// Update Item in Firestore
+ 
   Future<void> updateItem(String itemId, String newName) async {
     try {
       await _db.collection("items").doc(itemId).update({
@@ -87,12 +87,12 @@ class SearchProvider extends ChangeNotifier {
     }
   }
 
-  /// Get all items as a stream
+
   Stream<QuerySnapshot> getItems() {
     return _db.collection("items").orderBy("name").snapshots();
   }
 
-  /// Get single item by ID
+
   Future<DocumentSnapshot?> getItemById(String itemId) async {
     try {
       return await _db.collection("items").doc(itemId).get();
@@ -102,7 +102,7 @@ class SearchProvider extends ChangeNotifier {
     }
   }
 
-  /// Clear search results
+
   void clearSearch() {
     results = [];
     errorMessage = null;
