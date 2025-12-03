@@ -49,7 +49,7 @@ class _EditItemDialogState extends State<EditItemDialog> {
 
     final newName = _controller.text.trim();
 
-    // Check if name actually changed
+    
     if (newName == widget.currentName) {
       Navigator.pop(context);
       return;
