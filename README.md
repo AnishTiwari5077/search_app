@@ -22,6 +22,17 @@ Empty state & error handling widgets
 
 SnackBar notifications for actions
 
+
+##Screenshot
+<img width="315" height="700" alt="Screenshot_1764754142" src="https://github.com/user-attachments/assets/f5f5e794-5e8b-4a0f-a776-081d39f0c677" />
+<img width="315" height="700" alt="Screenshot_1764754136" src="https://github.com/user-attachments/assets/d265d557-3cb7-4edc-8fa1-c43e78e445a0" />
+<img width="315" height="700" alt="Screenshot_1764754129" src="https://github.com/user-attachments/assets/4269a7f1-5286-4bfd-abdb-53e2ae4bc1a5" />
+<img width="315" height="700" alt="Screenshot_1764754116" src="https://github.com/user-attachments/assets/a42f2068-62f9-4f51-a774-4fefa43139bc" />
+<img width="315" height="700" alt="Screenshot_1764754091" src="https://github.com/user-attachments/assets/b8b48952-2efa-4b92-a641-a37de3c90a71" />
+<img width="315" height="700" alt="Screenshot_1764754086" src="https://github.com/user-attachments/assets/380b273d-c935-4341-9661-7c6cc294ea87" />
+<img width="315" height="700" alt="Screenshot_1764754080" src="https://github.com/user-attachments/assets/8e30ba2b-a6d2-4f75-b3f7-8f9553cabd5e" />
+
+
 📂 Folder Structure
 lib/
 ├── main.dart                  # App entry point
@@ -99,6 +110,7 @@ All actions are real-time using Firebase Firestore streams.
 The project uses Provider for state management, ensuring only necessary widgets rebuild.
 
 Error and empty states are handled gracefully with reusable widgets.
+
 
 
 
