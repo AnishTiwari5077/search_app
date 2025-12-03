@@ -1,4 +1,4 @@
-Flutter Search & Item Management App
+ #Flutter Search & Item Management App
 
 A modern Flutter application demonstrating search, add, edit, and delete functionality with a clean UI, provider state management, and Firebase integration.
 
@@ -110,6 +110,7 @@ All actions are real-time using Firebase Firestore streams.
 The project uses Provider for state management, ensuring only necessary widgets rebuild.
 
 Error and empty states are handled gracefully with reusable widgets.
+
 
 
 
