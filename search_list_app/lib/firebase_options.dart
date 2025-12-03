@@ -50,21 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBLNA4q64tm8OxiiW4nc3gUZxGSxCR7r_o',
-    appId: '1:235288299199:android:aebaa4f6f88561509e280a',
-    messagingSenderId: '235288299199',
-    projectId: 'anish--tiwari',
-    databaseURL: 'https://anish--tiwari-default-rtdb.firebaseio.com',
-    storageBucket: 'anish--tiwari.firebasestorage.app',
+    apiKey: 'AIzaSyDMZTKN1U6Y0cQLaNyCgz33Z3_sSZAHVVk',
+    appId: '1:220461983938:android:fff5b1ad053a3fa0c4735b',
+    messagingSenderId: '220461983938',
+    projectId: 'search-451c0',
+    storageBucket: 'search-451c0.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBFlJW_x7ZnNwuCfh8xHtsdepBgjAeKyG0',
-    appId: '1:235288299199:ios:35898ef4ce0191bf9e280a',
-    messagingSenderId: '235288299199',
-    projectId: 'anish--tiwari',
-    databaseURL: 'https://anish--tiwari-default-rtdb.firebaseio.com',
-    storageBucket: 'anish--tiwari.firebasestorage.app',
+    apiKey: 'AIzaSyBlMKBa02RZbLXKMCEAdC5gMEM_x3BRlco',
+    appId: '1:220461983938:ios:e134ec974697e8d3c4735b',
+    messagingSenderId: '220461983938',
+    projectId: 'search-451c0',
+    storageBucket: 'search-451c0.firebasestorage.app',
     iosBundleId: 'com.example.searchListApp',
   );
+
 }
