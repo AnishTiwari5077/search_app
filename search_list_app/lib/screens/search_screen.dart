@@ -44,12 +44,12 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       body: Column(
         children: [
-          /// 🔍 SEARCH BAR
+          
           _buildSearchBar(searchProvider),
 
           const Divider(height: 1),
 
-          /// 📄 ITEMS LIST
+          
           Expanded(child: _buildItemsList(searchProvider)),
         ],
       ),
@@ -77,7 +77,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ];
           }
 
-          // Trigger search and wait for completion
+          
           await provider.search(controller.text);
 
           if (provider.errorMessage != null) {
